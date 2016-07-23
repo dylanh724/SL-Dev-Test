@@ -1,0 +1,9 @@
+C:\Users\Dylan-ASUS\Downloads\SmartLaunch\test\WebServiceDemo\WebServiceDemo\bin\WebServiceDemo.dll.config
+C:\Users\Dylan-ASUS\Downloads\SmartLaunch\test\WebServiceDemo\WebServiceDemo\bin\WebServiceDemo.dll
+C:\Users\Dylan-ASUS\Downloads\SmartLaunch\test\WebServiceDemo\WebServiceDemo\bin\WebServiceDemo.pdb
+C:\Users\Dylan-ASUS\Downloads\SmartLaunch\test\WebServiceDemo\WebServiceDemo\bin\WebServiceDemo.xml
+C:\Users\Dylan-ASUS\Downloads\SmartLaunch\test\WebServiceDemo\WebServiceDemo\obj\Release\WebServiceDemo.Resources.resources
+C:\Users\Dylan-ASUS\Downloads\SmartLaunch\test\WebServiceDemo\WebServiceDemo\obj\Release\WebServiceDemo.vbproj.GenerateResource.Cache
+C:\Users\Dylan-ASUS\Downloads\SmartLaunch\test\WebServiceDemo\WebServiceDemo\obj\Release\WebServiceDemo.dll
+C:\Users\Dylan-ASUS\Downloads\SmartLaunch\test\WebServiceDemo\WebServiceDemo\obj\Release\WebServiceDemo.xml
+C:\Users\Dylan-ASUS\Downloads\SmartLaunch\test\WebServiceDemo\WebServiceDemo\obj\Release\WebServiceDemo.pdb

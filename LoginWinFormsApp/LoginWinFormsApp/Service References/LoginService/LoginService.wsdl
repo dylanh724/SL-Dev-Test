@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://dylanh-dev.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://dylanh-dev.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://dylanh-dev.com/">
+      <s:element name="SQLTest">
+        <s:complexType />
+      </s:element>
+      <s:element name="SQLTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SQLTestResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsernameEntered" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordEntered" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifyLoginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterNewUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsernameEntered" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordEntered" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstNameEntered" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastNameEntered" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobilePhoneEntered" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailEntered" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BirthdayEntered" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterNewUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegisterNewUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckExistingUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsernameEntered" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailEntered" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobilePhoneEntered" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckExistingUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckExistingUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SQLTestSoapIn">
+    <wsdl:part name="parameters" element="tns:SQLTest" />
+  </wsdl:message>
+  <wsdl:message name="SQLTestSoapOut">
+    <wsdl:part name="parameters" element="tns:SQLTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyLogin" />
+  </wsdl:message>
+  <wsdl:message name="VerifyLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterNewUserSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterNewUser" />
+  </wsdl:message>
+  <wsdl:message name="RegisterNewUserSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterNewUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckExistingUserSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckExistingUser" />
+  </wsdl:message>
+  <wsdl:message name="CheckExistingUserSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckExistingUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="SQLTest">
+      <wsdl:input message="tns:SQLTestSoapIn" />
+      <wsdl:output message="tns:SQLTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyLogin">
+      <wsdl:input message="tns:VerifyLoginSoapIn" />
+      <wsdl:output message="tns:VerifyLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewUser">
+      <wsdl:input message="tns:RegisterNewUserSoapIn" />
+      <wsdl:output message="tns:RegisterNewUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckExistingUser">
+      <wsdl:input message="tns:CheckExistingUserSoapIn" />
+      <wsdl:output message="tns:CheckExistingUserSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SQLTest">
+      <soap:operation soapAction="http://dylanh-dev.com/SQLTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyLogin">
+      <soap:operation soapAction="http://dylanh-dev.com/VerifyLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewUser">
+      <soap:operation soapAction="http://dylanh-dev.com/RegisterNewUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckExistingUser">
+      <soap:operation soapAction="http://dylanh-dev.com/CheckExistingUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SQLTest">
+      <soap12:operation soapAction="http://dylanh-dev.com/SQLTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyLogin">
+      <soap12:operation soapAction="http://dylanh-dev.com/VerifyLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewUser">
+      <soap12:operation soapAction="http://dylanh-dev.com/RegisterNewUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckExistingUser">
+      <soap12:operation soapAction="http://dylanh-dev.com/CheckExistingUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://localhost:52777/LoginService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://localhost:52777/LoginService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
